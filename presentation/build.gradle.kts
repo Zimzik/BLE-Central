@@ -45,7 +45,6 @@ android {
 dependencies {
     // Core
     implementation(libs.androidx.core.ktx)
-//    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // UI
@@ -56,7 +55,6 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.icons)
-//    implementation(libs.material)
 
     // Navigation
     implementation(libs.hilt.compose.navigation)
