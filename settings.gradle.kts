@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "BLE Central"
 include(":app")
- 
+include(":domain")
+include(":data")
+include(":presentation")
