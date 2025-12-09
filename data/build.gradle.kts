@@ -1,26 +1,21 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.example.blecentral"
+    namespace = "com.example.data"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.blecentral"
         minSdk = 26
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -44,12 +39,18 @@ android {
 }
 
 dependencies {
-    // DI
-    implementation(libs.hilt)
-    ksp(libs.hilt.compiler)
+    // Core
+    implementation(libs.androidx.core.ktx)
+
+    // Testing
+    testImplementation(libs.junit)
+    testImplementation(libs.androidx.robolectric)
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk.agent)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
     // modules dependencies
     implementation(project(":domain"))
-    implementation(project(":data"))
-    implementation(project(":presentation"))
 }
