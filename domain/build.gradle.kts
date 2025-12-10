@@ -13,6 +13,10 @@ kotlin {
 }
 
 dependencies {
+    // Core
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.javax.inject)
+
     // Testing
     testImplementation(libs.junit)
     testImplementation(libs.kotlin.test.runner)
