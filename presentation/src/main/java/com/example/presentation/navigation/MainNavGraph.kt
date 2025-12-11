@@ -49,7 +49,11 @@ fun MainNavGraph(innerPaddingValues: PaddingValues) {
         }
 
         composable(SCAN_SCREEN) {
-            ScanScreen()
+            ScanScreen {
+                navController.navigate(PERMISSION_SCREEN) {
+                    popUpTo(SCAN_SCREEN) { inclusive = true }
+                }
+            }
         }
     }
 }

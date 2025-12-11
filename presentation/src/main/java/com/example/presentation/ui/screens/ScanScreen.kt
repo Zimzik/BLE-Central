@@ -7,24 +7,32 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.presentation.common.RequiredPermissions
+import com.example.presentation.ui.common.OnResumePermissionsChecker
 
 @Composable
-fun ScanScreen() {
+fun ScanScreen(
+    onBlePermissionDenied: () -> Unit
+) {
+    ScanScreenContent(onBlePermissionDenied)
+}
+
+@Composable
+fun ScanScreenContent(onBlePermissionDenied: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Text("Scan screen")
     }
-}
 
-@Composable
-fun ScanScreenContent() {
-
+    OnResumePermissionsChecker(RequiredPermissions.BLE) { granted ->
+        if (!granted) onBlePermissionDenied()
+    }
 }
 
 @Composable
 @Preview(showBackground = true)
 fun ScanScreenPreview() {
-    ScanScreenContent()
+    ScanScreenContent({})
 }
