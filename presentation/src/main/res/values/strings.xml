@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="splash_icon_description">Splash icon</string>
+    <string name="permission_requirement_description">This application requires Bluetooth permissions to work.</string>
+    <string name="permission_require_changes_in_settings">To grant permission, you need to grant it in the application settings.</string>
+    <string name="request_permission">Request permissions</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>

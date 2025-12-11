@@ -10,7 +10,7 @@ import org.junit.Before
 import org.junit.Test
 
 @OptIn(ExperimentalPermissionsApi::class)
-class PermissionStateWrapperTest {
+class PermissionStateWrapperUnitTest {
 
     private lateinit var permissionState: MultiplePermissionsState
 
